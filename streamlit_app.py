@@ -9,7 +9,8 @@ sl.text('hello')
 lst = pd.read_csv(f)
 
 lst = lst.set_index('Fruit')
-sl.multiselect('pick:', list(lst.index))
-sl.dataframe(lst)
+lst_slt = sl.multiselect('pick:', list(lst.index))
+lst_lk = lst.loc[lst_slt]
+sl.dataframe(lst_lk)
 
 ### EOL
